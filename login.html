@@ -8,10 +8,12 @@
     <!-- <h1 face="Lucida Fax" size="11" font color="black;"> -->
     <style>
         body {
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
+            /* background-repeat: no-repeat;
+            background-size: 100% 100%; */
             /* background-attachment: fixed; */
-            background-color: #a18d6c;
+            /* background-color: #a18d6c; */
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .imagel {
@@ -39,7 +41,7 @@
         .login{
             position: absolute;
             top: calc(50% - 75px);
-            right: calc(2% - 50px);
+            /* right: calc(2% - 20px);  */
             height: 150px;
             width: 350px;
             padding: 10px;
@@ -117,15 +119,14 @@
         ::-moz-input-placeholder{
         color: rgba(255,255,255,0.6);
         }
+
     </style>
 </head>
 
-<body bgcolor="white">
+<body background="images/squash1.jpg">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Squash Ladder</a>
-        
-      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <!-- <li class="nav-item active">
@@ -140,22 +141,23 @@
           </ul>
         </div>
       </nav>
-
-        <img src="images/0600776f-047c-4853-92f2-bb6a87601341.jpg" alt="squash" width="700px" height="700px">
+        <!-- <div class="imgbox"> -->
+            <!-- <img src="images/squash-login.jpg" alt="squash"> -->
+        <!-- </div> -->
         <!-- <body background="0600776f-047c-4853-92f2-bb6a87601341.jpg"> -->
 
             <!-- <h1> we do all for squash but squash for us </h1>
             <h2> ispin login </h2> -->
-		<div class="header">
+		<!-- <div class="header">
 			<div>ispin Login</div>
-		</div>
+		</div> -->
 		<br>
 		<div class="login">
             <form action="login.php" method="POST">
 				<input type="text" placeholder="username" name="user"><br>
-				<input type="password" placeholder="password" name="password"><br>
+				<input type="password" placeholder="password" name="password"><br><br>
 				<input type="submit" value="Login">
-                <p style="font-size: 80%;">not a member? <a href = "signup.html">sign up</a></p>
+                <p style="font-size: 80%;">not a member? <a href = "signup2.php">sign up</a></p>
             </form>
         
         </div>    

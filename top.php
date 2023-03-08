@@ -54,7 +54,7 @@ tbody tr:nth-child(even){
     </style>
 </head>
 
-<body background="images/squash.jpg">
+<body background="images/squash1.jpg">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Squash Ladder</a>
@@ -63,7 +63,7 @@ tbody tr:nth-child(even){
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="home_user.php">Home</a>
+              <a class="nav-link" href="home_user.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">score board<span class="sr-only">(current)</span></a>
@@ -72,7 +72,7 @@ tbody tr:nth-child(even){
         </div>
       </nav>
 
-      <table style="margin-left: 225px;" >
+      <table style="margin-left: 520px;" >
         <thead>
           <tr>
             <th>SNO</th>
@@ -85,7 +85,7 @@ tbody tr:nth-child(even){
   
         <tbody>
         <?php
-                $connect = mysqli_connect("localhost","root","","demo") or die("connection failed");
+                $connect = mysqli_connect("localhost","root","root","demo") or die("connection failed");
                 $sql = "select * from top";
                 $result = $connect-> query($sql);
                 if($result-> num_rows>0){

@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    
   <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
@@ -113,28 +114,124 @@
     background-repeat: no-repeat;
     background-size: cover;
     }
+    .header{
+            position: absolute;
+            top: calc(50% - 35px);
+            /* left: calc(50% - 255px); */
+            right: calc(30% - 50px);
+            z-index: 2;
+        }
+
+        .header div{
+            float: left;
+            color: #fff;
+            font-family: 'Exo', sans-serif;
+            font-size: 35px;
+            font-weight: 200;
+        }
+
+    
+
+        .login{
+            position: absolute;
+            top: calc(50% - 75px);
+            /* right: calc(2% - 20px);  */
+            height: 150px;
+            width: 350px;
+            padding: 10px;
+            z-index: 2;
+        }
+
+        .login input[type=text]{
+            width: 250px;
+            height: 30px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 2px;
+            color: rgb(0, 0, 0);
+            font-family: 'Exo', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 4px;
+        }
+
+        .login input[type=password]{
+            width: 250px;
+            height: 30px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 2px;
+            color: rgb(0, 0, 0);
+            font-family: 'Exo', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 4px;
+            margin-top: 10px;
+        }
+
+        .login input[type=button]{
+            width: 260px;
+            height: 35px;
+            background: rgb(255, 255, 255);
+            border: 1px solid #fff;
+            cursor: pointer;
+            border-radius: 2px;
+            color: #a18d6c;
+            font-family: 'Exo', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 6px;
+            margin-top: 10px;
+        }
+
+        .login input[type=button]:hover{
+            opacity: 0.8;
+        }
+
+        .login input[type=button]:active{
+            opacity: 0.6;
+        }
+
+        .login input[type=text]:focus{
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.9);
+        }
+
+        .login input[type=password]:focus{
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.9);
+        }
+
+        .login input[type=button]:focus{
+            outline: none;
+        }
+
+        ::-webkit-input-placeholder{
+        color: rgba(0, 0, 0, 0.6);
+        }
+
+        ::-moz-input-placeholder{
+        color: rgba(255,255,255,0.6);
+        }
   </style>
 </head>
   <body background="images/squash1.jpg">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Squash Ladder</a>
-
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-brand" href="#">Squash Ladder</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                  <a class="nav-link" href="home_user.html">Home</a>
-              </li>
-
-              <li class="nav-item">
-                  <a class="nav-link" href="login2.php">Logout</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="eventlist.html">Registrations</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="top.html">score board</a>
+            </li> -->
+            <li class="nav-item active">
+                <a class="nav-link" href="login2.php">login</a>
               </li>
           </ul>
-      </div>
-  </nav>
+        </div>
+      </nav>
     <div class="login-page">
       <div class="form">
         <!-- <form class="register-form">
@@ -144,14 +241,15 @@
           <button>create</button>
           <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form> -->
-        <form class="login-form" action="reg.php" method="POST">
+        SIGN UP <br><br>
+        <form class="login-form" action="signup.php" method="POST">
 
           <!-- <input type="text" placeholder="email address"/> -->
           <input type="text" placeholder="username" name="user" required/>
-          <input type="text" placeholder="email" name="email" required/>
-          <input type="text" placeholder="phone number" name="phone" required/>
-          <!-- <input type="text" placeholder="total matches" name="total" required/> -->
-          <button type="submit" value="register">register!</button>
+          <input type="password" placeholder="password" name="password" required/>
+          <button type="submit" value="signup">signup</button>
+          <p style="font-size: 90%;"><?php echo $_GET['err'] ?></p>
+          <p style="font-size: 80%;">already a member? <a href = "login2.php">login</a></p>
         </form>
       </div>
     </div>

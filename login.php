@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = "";
+$password = "root";
 $db = "demo";
 
 $connect = mysqli_connect($host,$user,$password);
@@ -16,11 +16,14 @@ if(isset($_POST["user"])){
     $result = mysqli_query($connect,$sql);
 
     if(mysqli_num_rows($result)==1){
-        include 'home_user.php';
+        include 'home_user.html';
         exit();
     }
     else{
-        echo " You have entered incorrect password";
+        // echo " You have entered incorrect password";
+        // print("You have entered incorrect password");
+        $msg = "You have entered incorrect password";
+        header('Location: login2.php?msg='.$msg);
         exit();
     }
 }

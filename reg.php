@@ -12,7 +12,7 @@ $errors = array();
 
 include('errors1.php');
 
-$db = mysqli_connect("localhost","root","","demo") or die("could not connect to database");
+$db = mysqli_connect("localhost","root","root","demo") or die("could not connect to database");
 
 $username = mysqli_real_escape_string($db,$_POST['user']);
 $email = mysqli_real_escape_string($db,$_POST['email']);
