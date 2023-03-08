@@ -31,17 +31,20 @@ if(empty($mobile))
     array_push($errors, "mobile number required");
 }
 
-$user_check_query = "select * from register where user = '$username' limit 1";
+$user_check_query = "select * from register where username = '$username' limit 1";
 
 $results = mysqli_query($db,$user_check_query);
+if(!$results){
+	die(mysqli_error($db));
+}
 $user = mysqli_fetch_assoc($results);
 
-// if($user){
+if($user){
 
-//     if($user['user'] === $username){
-//         array_push($errors,"username already exists");
-//     }
-// }
+    if($user['user'] === $username){
+        array_push($errors,"username already exists");
+    }
+}
 
 
 if(count($errors) == 0){
